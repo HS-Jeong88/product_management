@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PRODUCT MANAGEMENT SYSTEM</title>
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
@@ -16,62 +16,97 @@
       <div class="contents statistic">
         <div class="content">
           <span>전체 상품</span>
-          <span>4</span>
+          <span id="totalProducts">0</span>
           <span>개</span>
         </div>
         <div class="content">
           <span>총 재고 수량</span>
-          <span>55</span>
+          <span id="totalQuantity">0</span>
           <span>개</span>
         </div>
         <div class="content">
           <span>재고 부족</span>
-          <span>1</span>
-          <span>10개 미만</span>
+          <span id="lowStockCount">0</span>
+          <span>개 상품</span>
         </div>
         <div class="content">
           <span>재고 자산 금액</span>
-          <span>850만</span>
+          <span id="inventoryValue">0</span>
           <span>원</span>
         </div>
       </div>
       <div class="contents productSearch">
         <div>
           <span>상품 목록</span>
-          <span>4개</span>
+          <span id="productCount">0개</span>
         </div>
         <div>
-          <input type="text" placeholder="상품명 또는 상품 코드 검색" />
-          <button>+ 상품 등록</button>
+          <input
+            id="productSearchInput"
+            type="search"
+            placeholder="상품명 또는 상품 코드 검색"
+            aria-label="상품명 또는 상품 코드 검색"
+          />
+          <button id="createProductButton" type="button">+ 상품 등록</button>
+          <a href="./trash.html">삭제 상품 목록</a>
         </div>
       </div>
-      <div class="contents productRegister">
-        <div class="card">
-          <div>
-            <div>
-              <input type="radio" name="productCard" id="" />
-              <span>삼성 모니터</span>
-              <span>P001·전자제품</span>
-              <span>공급업체: 삼성전자</span>
-            </div>
-            <div>
-              <span>판매중</span>
-              <span>250,000원</span>
-              <span>재고 30개</span>
-            </div>
-          </div>
-          <div>
-            <button>수정</button>
-            <button>삭제</button>
-          </div>
-        </div>
-        <div>
-          <span>이전</span>
-          <span>1 / 1</span>
-          <span>다음</span>
+      <div class="contents productSort">
+        <label for="sortField">정렬 기준</label>
+        <select id="sortField">
+          <option value="price">가격</option>
+          <option value="quantity">재고</option>
+        </select>
+        <button id="sortProductsButton" type="button">오름차순</button>
+      </div>
+      <div class="contents productList">
+        <p id="apiError" role="alert" hidden></p>
+        <div class="page">
+          <button type="button" id="previousPage">이전</button>
+          <span id="pageIndicator">1 / 1</span>
+          <button type="button" id="nextPage">다음</button>
         </div>
       </div>
-      <div class="contents productList"></div>
     </div>
+    <dialog id="productDialog">
+      <form id="productForm">
+        <h2 id="productDialogTitle">상품 등록</h2>
+        <p id="productDialogError" role="alert" hidden></p>
+        <label>
+          상품 코드
+          <input name="code" type="text" maxlength="20" required />
+        </label>
+        <label>
+          상품명
+          <input name="name" type="text" maxlength="100" required />
+        </label>
+        <label>
+          카테고리
+          <input name="category" type="text" maxlength="50" required />
+        </label>
+        <label>
+          가격
+          <input name="price" type="number" min="0" step="1" required />
+        </label>
+        <label>
+          재고 수량
+          <input name="quantity" type="number" min="0" step="1" required />
+        </label>
+        <label>
+          최소 재고 수량
+          <input name="min_quantity" type="number" min="0" step="1" required />
+        </label>
+        <label>
+          공급업체
+          <input name="supplier" type="text" maxlength="100" required />
+        </label>
+        <div class="dialogButtons">
+          <button id="cancelProductButton" type="button">취소</button>
+          <button id="saveProductButton" type="submit">저장</button>
+        </div>
+      </form>
+    </dialog>
+    <script src="./js/api.js" defer></script>
+    <script src="./js/index.js" defer></script>
   </body>
 </html>
