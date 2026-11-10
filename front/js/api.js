@@ -1,4 +1,5 @@
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://product-management-oxoe.onrender.com";
+// const API_BASE_URL = "http://127.0.0.1:8000";
 
 const request = async (path, options = {}) => {
   const response = await fetch(`${API_BASE_URL}${path}`, {
@@ -12,9 +13,7 @@ const request = async (path, options = {}) => {
   if (!response.ok) {
     const error = await response.json();
     const detail =
-      typeof error.detail === "string"
-        ? error.detail
-        : JSON.stringify(error.detail ?? error);
+      typeof error.detail === "string" ? error.detail : JSON.stringify(error.detail ?? error);
     throw new Error(detail);
   }
 

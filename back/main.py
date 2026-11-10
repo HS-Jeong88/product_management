@@ -11,7 +11,7 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 DATA_FILE = Path(__file__).parent / "storage" / "data.json"
 DATA_LOCK = Lock()
 
-whiteList = ['http://127.0.0.1:5500']
+whiteList = ["http://127.0.0.1:5500","https://product-management-front-33ui.onrender.com"]
 app = FastAPI(title="Product Management API")
 app.add_middleware(
     CORSMiddleware,
