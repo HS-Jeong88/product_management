@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://product-management-oxoe.onrender.com";
+const API_BASE_URL = "https://product-management-back-h88l.onrender.com";
 // const API_BASE_URL = "http://127.0.0.1:8000";
 
 const request = async (path, options = {}) => {
