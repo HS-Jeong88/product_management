@@ -1,0 +1,55 @@
+header {
+  background-color: rgb(23 43 77 / 1);
+  color: white;
+  padding: 10px 20px;
+  h1 {
+    font-size: 40px;
+    line-height: 24px;
+  }
+  span {
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.statistic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 20px;
+  :nth-child(3) {
+    :nth-child(2) {
+      color: brown;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    :nth-child(2) {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+}
+.productSearch {
+  width: 100%;
+  div {
+    display: flex;
+  }
+  :nth-child(1) {
+    justify-content: space-between;
+  }
+  :nth-child(2) {
+    :nth-child(2) {
+      width: 15%;
+    }
+  }
+}
+.productRegister {
+}
+.productList {
+}

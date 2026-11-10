@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <header>
+      <span>PRODUCT MANAGEMENT SYSTEM</span>
+      <h1>상품 관리 대시보드</h1>
+      <span>상품 등록부터 재고 관리까지 한 곳에서 관리합니다.</span>
+    </header>
+    <div class="container">
+      <div class="contents statistic">
+        <div class="content">
+          <span>전체 상품</span>
+          <span>4</span>
+          <span>개</span>
+        </div>
+        <div class="content">
+          <span>총 재고 수량</span>
+          <span>55</span>
+          <span>개</span>
+        </div>
+        <div class="content">
+          <span>재고 부족</span>
+          <span>1</span>
+          <span>10개 미만</span>
+        </div>
+        <div class="content">
+          <span>재고 자산 금액</span>
+          <span>850만</span>
+          <span>원</span>
+        </div>
+      </div>
+      <div class="contents productSearch">
+        <div>
+          <span>상품 목록</span>
+          <span>4개</span>
+        </div>
+        <div>
+          <input type="text" placeholder="상품명 또는 상품 코드 검색" />
+          <button>+ 상품 등록</button>
+        </div>
+      </div>
+      <div class="contents productRegister">
+        <div class="card">
+          <div>
+            <div>
+              <input type="radio" name="productCard" id="" />
+              <span>삼성 모니터</span>
+              <span>P001·전자제품</span>
+              <span>공급업체: 삼성전자</span>
+            </div>
+            <div>
+              <span>판매중</span>
+              <span>250,000원</span>
+              <span>재고 30개</span>
+            </div>
+          </div>
+          <div>
+            <button>수정</button>
+            <button>삭제</button>
+          </div>
+        </div>
+        <div>
+          <span>이전</span>
+          <span>1 / 1</span>
+          <span>다음</span>
+        </div>
+      </div>
+      <div class="contents productList"></div>
+    </div>
+  </body>
+</html>
